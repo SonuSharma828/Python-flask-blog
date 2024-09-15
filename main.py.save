@@ -1,0 +1,66 @@
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
+app = Flask(__name__)
+
+#app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql+pymysql://root@localhost/coderr'
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@127.0.0.1:8001/coderr'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+
+class Contact(db.Model):
+    Sno = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    email = db.Column(db.String(120), nullable=False)
+    phone_num = db.Column(db.String(15), nullable=False)  # Adjust to match your schema
+    message = db.Column(db.Text, nullable=True)
+    date_time = db.Column(db.TIMESTAMP, nullable=True)
+
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        # Capturing form data correctly
+        name = request.form.get("name")
+        email = request.form.get("email")
+        phone = request.form.get("phone")  # Ensure phone is a string
+        message = request.form.get("message")  # Correct variable name
+
+        # Creating a new entry with correct variable names
+        entry = Contact(
+            name=name,
+            email=email,
+            phone_num=phone,
+            message=message,
+            date_time=datetime.now()
+        )
+
+        # Adding to the session and committing the transaction
+        db.session.add(entry)
+        db.session.commit()
+
+    return render_template("contact.html")
+
+
+@app.route("/post")
+def post():
+    return render_template("post.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=8080)

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="" />
+    <title>{{params['title']}}</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="container"> 
+    <div class="row"> 
+        <div class="col-md-6"> 
+            <div class="card"> 
+                    <form  action="/dashboard" method="post" class="box"> 
+                         <h1>Admin Login</h1> 
+                         <p class="text-muted"> Please enter your Admin login and password!</p> 
+                         <input type="text" name="username" placeholder="Username"> 
+                         <input type="password" name="password" placeholder="Password"> 
+                         <a class="forgot text-muted" href="#">Forgot password?</a> 
+                         <input type="submit" name="btn" value="Login" href="#"> 
+                              <div class="col-md-12"> 
+                                  <ul class="social-network social-circle">
+                                      <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                      <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li> 
+                                      <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li> 
+                                   </ul> 
+                               </div> 
+                      </form> 
+                 </div> 
+            </div> 
+       </div>
+</div>
+</body>
+</html>

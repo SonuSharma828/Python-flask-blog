@@ -1,0 +1,22 @@
+{
+"params":
+{
+"local_server":"True",
+"fb_url":"https://facebook.com/sonukumar4253",
+"tw_url":"https://twitter.com",
+"ig_url":"https://instagram.com",
+"local_url":"sqlite:///database.db",
+"prod_url":"sqlite:///database.db",
+"title":"ThehackersHub",
+"sub_title":"A Hacker Is Always A Hacker",
+"blog_name":"TheHackersHub",
+"about_title":"About Us",
+"email-user":"sonukumar2003rs17@gmail.com",
+"email-password":"sonukumar4253",
+"about_subtitle":"This is Whta we do",
+"num_of_post":2,
+"admin-name":"Sonu@6176",
+"admin-password":"sonu@3234"
+}
+
+}

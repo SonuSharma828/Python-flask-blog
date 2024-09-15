@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({{url_for('static',filename='assets/img/about-bg.jpg')}})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>{{params['about_title']}}</h1>
+                            <span class="subheading">{{params['about_subtitle']}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h3>About The Hackers Hub</h3>
+                        <p>Welcome to The Hackers Hub, your go-to destination for all things related to white hat security. At The Hackers Hub, we are dedicated to exploring the world of ethical hacking, cybersecurity, and digital defense, with a focus on responsible and lawful security practices.</p>
+                        <h3>Our Mission</h3>
+                        <p>Our mission is to empower individuals and organizations to stay ahead of cyber threats by providing valuable insights, tutorials, and resources on ethical hacking. We believe that knowledge is power, and by sharing our expertise, we aim to create a safer digital world for everyone.</p>
+                        <h3>What We Offers</h3><br>
+                        <ul>
+                        <li><h5>Educational Content:</h5><p>From beginner guides to advanced tutorials, our content is designed to help you understand the fundamentals of cybersecurity and ethical hacking.</p></li>
+                        <li><h5>Latest Trends and News:</h5><p>Stay updated with the latest developments in the cybersecurity industry, including new vulnerabilities, patches, and tools.</p></li>
+                        <li><h5>Community Support:</h5><p>The Hackers Hub is a community-driven platform where like-minded individuals can share knowledge, ask questions, and collaborate on security projects.</p></li>
+                        </ul>
+                        <h3>Our Values</h3>
+                        <p>We are committed to promoting ethical hacking and responsible security practices. Our content is aimed at helping you understand security vulnerabilities to improve systems rather than exploit them.</p>
+                        <h3>Join Us</h3>
+                        <p>Whether you're a seasoned security professional or a beginner looking to explore the field of ethical hacking, The Hackers Hub is here for you. Dive in, explore, learn, and contribute to making the internet a safer place.</p>            
+                    </div>
+                </div>
+            </div>
+        </main>
+
+{% endblock %}
